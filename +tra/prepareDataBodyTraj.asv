@@ -1,0 +1,33 @@
+function [ x, y ] = prepareDataBodyTraj( sub_indices,saveXY,dataNumber )
+%prepareData3 It prepares input output matrices which are
+%   x: 13xn
+% 1:4-> RfootStart 5:8-> LfootStart 9:12-> strategyn13-> RorL 
+% Strategy is basicaly seqFeatures(1:4).
+%   y: 4xn
+% 1:4-> Nextstep  
+% To calculate x vector and basically stance step locations it uses
+% nnStance. Because the original function uses it and It is safer to create
+% the data set by using it. 
+addpath('./dnew/')
+if nargin==1
+    saveXY=false;%Default Speed Value
+elseif nargin==2
+    dataNumber=0;
+end
+
+sub=regtest.loadAndMergeSubjectsWithFeatures(sub_indices);
+[cut_sub,~]=btraj.cutSequence2(sub);
+% sub=rtools.transformSubject(sub);
+rstart=cat(1,cut_sub.rt)';
+lstart=cat(1,cut_sub.lt)';
+bodjTraj=cat(1,cut_sub.bTraj)';
+rorl=cat(1,cut_sub.RTorLT)';
+isStart=cat(1,cut_sub.isStart)';
+
+x=[rstart;lstart;isStart;rorl];
+y=nextstep;
+
+if saveXY
+    save(sprintf('./xyData/dataNextStep%d',dataNumber),'x','y');
+end
+end

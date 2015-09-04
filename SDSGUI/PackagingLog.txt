@@ -1,0 +1,26 @@
+ant:
+<ant>
+  <mkdir dir="C:\Users\utku\Documents\MATLAB\EPFL_Intern\SDSGUI\for_redistribution" />
+  <mkdir dir="C:\Users\utku\Documents\MATLAB\EPFL_Intern\SDSGUI\for_testing" />
+  <mkdir dir="C:\Users\utku\Documents\MATLAB\EPFL_Intern\SDSGUI\for_redistribution_files_only" />
+</ant>
+mcc -C -o SDSGUI -W WinMain:SDSGUI -T link:exe -d C:\Users\utku\Documents\MATLAB\EPFL_Intern\SDSGUI\for_testing -v C:\Users\utku\Documents\MATLAB\EPFL_Intern\SDS.m 
+Compiler version: 5.2 (R2014b)
+Dependency analysis by REQUIREMENTS.
+[Warning: Adding path "C:\Users\utku\Documents\MATLAB\EPFL_Intern" to Compiler
+path instance.] 
+Parsing file "C:\Users\utku\Documents\MATLAB\EPFL_Intern\SDS.m"
+	(Referenced from: "Compiler Command Line").
+Deleting 4 temporary MEX authorization files.
+Removing: 'C:\Users\utku\AppData\Local\Temp\mathworks_tmp_7820_3902_7820.auth'.
+Removing: 'C:\Users\utku\AppData\Local\Temp\mathworks_tmp_7820_10946_7820.auth'.
+Removing: 'C:\Users\utku\AppData\Local\Temp\mathworks_tmp_7820_1287_7820.auth'.
+Removing: 'C:\Users\utku\AppData\Local\Temp\mathworks_tmp_7820_6901_7820.auth'.
+Generating file "C:\Users\utku\Documents\MATLAB\EPFL_Intern\SDSGUI\for_testing\readme.txt".
+Packaging...
+Adding custom icon C:\Program Files\MATLAB\R2014b\toolbox\compiler\Resources\default_icon.ico to C:\Users\utku\Documents\MATLAB\EPFL_Intern\SDSGUI\for_testing\SDSGUI.exe.
+Attempting to embed the CTF archive into the application C:\Users\utku\Documents\MATLAB\EPFL_Intern\SDSGUI\for_testing\SDSGUI.exe.
+Finished embedding CTF archive. Deleting the external CTF archive.
+Creating the bundle...
+Web based installer created at C:\Users\utku\Documents\MATLAB\EPFL_Intern\SDSGUI\for_redistribution\MyAppInstaller_web.exe.
+Packaging complete.
